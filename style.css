@@ -1,0 +1,700 @@
+/* =========================================
+   BASIC PAGE SETUP
+========================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-color: #181818;
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 240px;
+
+    background-color: #202020;
+
+    border-right: 2px solid #444444;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+
+.logo img {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 2px solid #777777;
+}
+
+
+.logo h2 {
+    margin: 0;
+
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+.logo p {
+    margin: 4px 0 0;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.navigation a {
+    text-decoration: none;
+
+    color: #aaaaaa;
+
+    padding: 14px;
+
+    border: 1px solid transparent;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+
+.navigation a:hover {
+    color: white;
+
+    background-color: #2c2c2c;
+
+    border-color: #555555;
+}
+
+
+.navigation .active {
+    background-color: #eeeeee;
+
+    color: #181818;
+
+    border-color: #eeeeee;
+}
+
+
+/* =========================================
+   SIDEBAR BOTTOM
+========================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-top: 1px solid #444444;
+
+    border-bottom: 1px solid #444444;
+}
+
+
+.profile img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 2px solid #666666;
+}
+
+
+.profile h3 {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+.profile p {
+    margin: 4px 0 0;
+
+    color: #888888;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings {
+    display: block;
+
+    text-decoration: none;
+
+    color: #aaaaaa;
+
+    padding: 13px 0;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.settings:hover {
+    color: white;
+}
+
+
+/* =========================================
+   SIDEBAR FOOTER
+========================================= */
+
+.sidebar-footer {
+    border-top: 1px solid #444444;
+
+    padding-top: 15px;
+}
+
+
+.sidebar-footer p {
+    margin: 5px 0;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    flex: 1;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    border-bottom: 2px solid #444444;
+
+    padding-bottom: 25px;
+}
+
+
+.small-heading {
+    margin: 0 0 7px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.page-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    letter-spacing: -1px;
+}
+
+
+.welcome-text {
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-button {
+    background-color: #eeeeee;
+
+    color: #181818;
+
+    border: 2px solid #eeeeee;
+
+    padding: 12px 25px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 4px 4px 0px #555555;
+}
+
+
+.login-button:hover {
+    background-color: #181818;
+
+    color: white;
+
+    border-color: white;
+}
+
+
+/* =========================================
+   URL SECTION
+========================================= */
+
+.url-section {
+    background-color: #222222;
+
+    border: 2px solid #555555;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 6px 6px 0px #0e0e0e;
+}
+
+
+.url-section h2 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+}
+
+
+.url-section > p:not(.small-heading) {
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+.url-area {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.url-area input {
+    flex: 1;
+
+    background-color: #151515;
+
+    color: white;
+
+    border: 2px solid #555555;
+
+    padding: 14px;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+
+.url-area input:focus {
+    border-color: #aaaaaa;
+}
+
+
+.url-area button {
+    background-color: #eeeeee;
+
+    color: #181818;
+
+    border: 2px solid #eeeeee;
+
+    padding: 14px 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.url-area button:hover {
+    background-color: #181818;
+
+    color: white;
+
+    border-color: white;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.statistics {
+    margin-bottom: 30px;
+}
+
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+
+.section-title h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.card {
+    background-color: #222222;
+
+    border: 2px solid #444444;
+
+    padding: 20px;
+
+    box-shadow: 4px 4px 0px #0e0e0e;
+}
+
+
+.card:hover {
+    border-color: #777777;
+}
+
+
+.card-title {
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.card h3 {
+    margin: 15px 0 8px;
+
+    font-size: 27px;
+}
+
+
+.card p:last-child {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 11px;
+}
+
+
+.low-risk {
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   ANALYTICS + RISK SECTION
+========================================= */
+
+.dashboard-section {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.analytics-box,
+.risk-box {
+    background-color: #222222;
+
+    border: 2px solid #444444;
+
+    padding: 25px;
+
+    box-shadow: 5px 5px 0px #0e0e0e;
+}
+
+
+.analytics-box h2,
+.risk-box h2 {
+    margin: 0 0 8px;
+
+    font-size: 21px;
+}
+
+
+.analytics-box > p:not(.small-heading),
+.risk-box > p:not(.small-heading) {
+    color: #888888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   STATIC BAR CHART
+========================================= */
+
+.chart {
+    height: 180px;
+
+    margin-top: 25px;
+
+    border-left: 2px solid #555555;
+
+    border-bottom: 2px solid #555555;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    padding: 0 15px;
+}
+
+
+.bar {
+    flex: 1;
+
+    background-color: #eeeeee;
+
+    border: 2px solid #999999;
+}
+
+
+.bar-1 {
+    height: 45%;
+}
+
+
+.bar-2 {
+    height: 65%;
+}
+
+
+.bar-3 {
+    height: 50%;
+}
+
+
+.bar-4 {
+    height: 80%;
+}
+
+
+.bar-5 {
+    height: 60%;
+}
+
+
+.bar-6 {
+    height: 90%;
+}
+
+
+/* =========================================
+   CHART DAYS
+========================================= */
+
+.days {
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-top: 10px;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RISK BOX
+========================================= */
+
+.risk-circle {
+    width: 110px;
+
+    height: 110px;
+
+    border: 5px solid #777777;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.risk-details {
+    border-top: 1px solid #444444;
+
+    margin-top: 20px;
+
+    padding-top: 10px;
+}
+
+
+.risk-details p {
+    color: #888888;
+
+    font-size: 11px;
+
+    margin: 10px 0;
+}
+
+
+.risk-details strong {
+    color: #cccccc;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    border-top: 2px solid #444444;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+footer p {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
