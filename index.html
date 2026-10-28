@@ -4,22 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LinkNinja - Analytics Dashboard</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <div class="container">
 
         <!-- LEFT SIDEBAR -->
         <aside class="sidebar">
 
-            <!-- Project Logo -->
+            <!-- Original Project Logo — unchanged -->
             <div class="logo">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyrWWxiz8O0_X4LXHZrrfCv0drX98GrQ_9Z4KIzQaOiw&s=10"
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyrWWxiz8O0_X4LXHZrrfCv0drX98GrQ_9Z4KIzQaOiw&s=10"
                     alt="LinkNinja Logo">
 
                 <div>
@@ -28,111 +26,110 @@
                 </div>
             </div>
 
-
             <!-- Navigation -->
             <nav class="navigation">
-
-                <a href="#" class="active">Dashboard</a>
-
-                <a href="#">Links</a>
-
-                <a href="#">Analytics</a>
-
-                <a href="#">Risk Analysis</a>
-
+                <a href="#" class="active" data-page="dashboard">Dashboard</a>
+                <a href="#" data-page="links">Links</a>
+                <a href="#" data-page="analytics">Analytics</a>
+                <a href="#" data-page="risk">Risk Analysis</a>
             </nav>
-
 
             <!-- Bottom Sidebar Area -->
             <div class="sidebar-bottom">
 
-                <!-- Profile -->
+                <!-- Original Admin Profile — unchanged -->
                 <div class="profile">
-
-                    <img src="https://i.pravatar.cc/100?img=12"
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
                         alt="Profile Image">
 
                     <div>
                         <h3>Admin</h3>
                         <p>Full Access</p>
                     </div>
-
                 </div>
 
-
                 <!-- Settings -->
-                <a href="#" class="settings">
+                <a href="#" class="settings" id="settingsLink">
                     ⚙ Settings
                 </a>
 
-
                 <!-- Project Information -->
                 <div class="sidebar-footer">
-
                     <p>MINI PROJECT - 1</p>
                     <p>GROUP 01</p>
-
                 </div>
 
             </div>
-
         </aside>
-
 
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
 
-
             <!-- HEADER -->
-            <header class="page-header">
-
+            <header class="page-header" id="pageHeader">
                 <div>
-
                     <p class="small-heading">OVERVIEW</p>
-
                     <h1>Dashboard</h1>
 
                     <p class="welcome-text">
                         Monitor your link activity and traffic insights.
                     </p>
-
                 </div>
 
-
-                <!-- Rectangle Login -->
-                <button class="login-button">
+                <button class="login-button" id="loginButton" type="button">
                     LOGIN
                 </button>
-
             </header>
 
 
-
             <!-- URL ANALYSIS -->
-            <section class="url-section">
+            <section class="url-section" data-dashboard-section="dashboard">
 
-                <p class="small-heading">
-                    LINK ANALYSIS
-                </p>
+                <p class="small-heading">LINK ANALYSIS</p>
 
-                <h2>
-                    Analyze Your Link
-                </h2>
+                <h2>Analyze Your Link</h2>
 
                 <p>
                     Enter a URL to view its analytics and traffic information.
                 </p>
 
-
                 <div class="url-area">
 
                     <input
                         type="text"
-                        placeholder="Enter your URL here">
+                        id="urlInput"
+                        placeholder="Enter your URL here"
+                        autocomplete="url"
+                        aria-label="Enter URL to shorten">
 
-                    <button>
+                    <button type="button" id="analyzeButton">
                         ANALYZE LINK
+                    </button>
+
+                </div>
+
+                <!-- Message for validation and results -->
+                <p
+                    id="message"
+                    class="message"
+                    aria-live="polite">
+                </p>
+
+                <!-- Generated link result -->
+                <div id="resultBox" class="result-box" hidden>
+
+                    <p>Your generated link:</p>
+
+                    <a
+                        id="shortUrl"
+                        href="#"
+                        rel="noopener noreferrer">
+                    </a>
+
+                    <button type="button" id="copyButton">
+                        COPY LINK
                     </button>
 
                 </div>
@@ -140,178 +137,132 @@
             </section>
 
 
+            <!-- LINKS PAGE -->
+            <section id="linksPage" class="url-section" hidden>
+                <p class="small-heading">LINK LIBRARY</p>
+                <h2>Your Links</h2>
+                <p>Demo links generated in this browser are listed here.</p>
+                <div id="linksList" aria-live="polite"></div>
+            </section>
+
+            <!-- ANALYTICS PAGE -->
+            <section id="analyticsPage" class="url-section" hidden>
+                <p class="small-heading">PERFORMANCE</p>
+                <h2>Analytics</h2>
+                <p>These are local demo statistics, not real click tracking.</p>
+                <div class="cards">
+                    <div class="card">
+                        <p class="card-title">LINKS GENERATED</p>
+                        <h3 id="analyticsLinkCount">0</h3>
+                        <p>Saved in this browser</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-title">UNIQUE DESTINATIONS</p>
+                        <h3 id="analyticsDestinationCount">0</h3>
+                        <p>Different destination URLs</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RISK ANALYSIS PAGE -->
+            <section id="riskPage" class="url-section" hidden>
+                <p class="small-heading">SECURITY</p>
+                <h2>Risk Analysis</h2>
+                <p>Enter a URL to run a basic frontend pattern check. This is not a full security scan.</p>
+                <div class="url-area">
+                    <input type="text" id="riskUrlInput" placeholder="Enter a URL to check" autocomplete="url" aria-label="Enter URL for risk analysis">
+                    <button type="button" id="riskAnalyzeButton">CHECK URL</button>
+                </div>
+                <p id="riskMessage" class="message" aria-live="polite"></p>
+            </section>
 
             <!-- STATISTICS -->
-            <section class="statistics">
+            <section class="statistics" data-dashboard-section="dashboard">
 
                 <div class="section-title">
-
-                    <p class="small-heading">
-                        PERFORMANCE
-                    </p>
-
-                    <h2>
-                        Dashboard Overview
-                    </h2>
-
+                    <p class="small-heading">PERFORMANCE</p>
+                    <h2>Dashboard Overview</h2>
                 </div>
-
-
                 <div class="cards">
+    <!-- Card 1 -->
+    <div class="card">
+        <p class="card-title">TOTAL LINKS</p>
+        <h3 id="totalClicks">0</h3>
+        <p>Tracked link clicks</p>
+    </div>
 
+    <!-- Card 2 -->
+    <div class="card">
+        <p class="card-title">HUMAN TRAFFIC</p>
+        <h3 id="humanTraffic">0</h3>
+        <p>Verified human visits</p>
+    </div>
 
-                    <!-- Card 1 -->
-                    <div class="card">
+    <!-- Card 3 -->
+    <div class="card">
+        <p class="card-title">BOT TRAFFIC</p>
+        <h3 id="botTraffic">0</h3>
+        <p>Identified bot visits</p>
+    </div>
 
-                        <p class="card-title">
-                            TOTAL CLICKS
-                        </p>
-
-                        <h3>
-                            1,240
-                        </h3>
-
-                        <p>
-                            Overall link clicks
-                        </p>
-
-                    </div>
-
-
-                    <!-- Card 2 -->
-                    <div class="card">
-
-                        <p class="card-title">
-                            HUMAN TRAFFIC
-                        </p>
-
-                        <h3>
-                            1,050
-                        </h3>
-
-                        <p>
-                            Normal user activity
-                        </p>
-
-                    </div>
-
-
-                    <!-- Card 3 -->
-                    <div class="card">
-
-                        <p class="card-title">
-                            BOT TRAFFIC
-                        </p>
-
-                        <h3>
-                            190
-                        </h3>
-
-                        <p>
-                            Simulated bot activity
-                        </p>
-
-                    </div>
-
-
-                    <!-- Card 4 -->
-                    <div class="card risk-card">
-
-                        <p class="card-title">
-                            RISK LEVEL
-                        </p>
-
-                        <h3 class="low-risk">
-                            LOW
-                        </h3>
-
-                        <p>
-                            Current traffic risk
-                        </p>
-
-                    </div>
-
-                </div>
+    <!-- Card 4 -->
+    <div class="card risk-card">
+        <p class="card-title">RISK LEVEL</p>
+        <h3 class="low-risk" id="trafficRisk">UNKNOWN</h3>
+        <p>Traffic risk assessment</p>
+    </div>
+</div>
 
             </section>
 
 
-
             <!-- ANALYTICS SECTION -->
-            <section class="dashboard-section">
-
+            <section class="dashboard-section" data-dashboard-section="dashboard">
 
                 <!-- Traffic Analytics -->
                 <div class="analytics-box">
 
-                    <p class="small-heading">
-                        ANALYTICS
-                    </p>
+                    <p class="small-heading">ANALYTICS</p>
+                    <h2>Traffic Analytics</h2>
 
-                    <h2>
-                        Traffic Analytics
-                    </h2>
+                    <p>Traffic activity over the last few days.</p>
 
-                    <p>
-                        Traffic activity over the last few days.
-                    </p>
-
-
-                    <!-- Simple Static Chart -->
+                    <!-- Original Static Chart -->
                     <div class="chart">
-
                         <div class="bar bar-1"></div>
-
                         <div class="bar bar-2"></div>
-
                         <div class="bar bar-3"></div>
-
                         <div class="bar bar-4"></div>
-
                         <div class="bar bar-5"></div>
-
                         <div class="bar bar-6"></div>
-
                     </div>
 
-
                     <div class="days">
-
                         <span>MON</span>
                         <span>TUE</span>
                         <span>WED</span>
                         <span>THU</span>
                         <span>FRI</span>
                         <span>SAT</span>
-
                     </div>
 
                 </div>
 
 
-
                 <!-- Fraud Risk -->
                 <div class="risk-box">
 
-                    <p class="small-heading">
-                        SECURITY
-                    </p>
-
-                    <h2>
-                        Fraud Risk
-                    </h2>
-
+                    <p class="small-heading">SECURITY</p>
+                    <h2>Fraud Risk</h2>
 
                     <div class="risk-circle">
                         LOW
                     </div>
 
-
                     <p>
                         Current traffic shows a low level
                         of suspicious activity.
                     </p>
-
 
                     <div class="risk-details">
 
@@ -328,30 +279,22 @@
                         </p>
 
                     </div>
-
                 </div>
 
             </section>
 
 
-
             <!-- FOOTER -->
             <footer>
-
-                <p>
-                    LINKNINJA — LINK INTELLIGENCE & ANALYTICS
-                </p>
-
-                <p>
-                    MINI PROJECT - 1 | GROUP 01
-                </p>
-
+                <p>LINKNINJA — LINK INTELLIGENCE &amp; ANALYTICS</p>
+                <p>MINI PROJECT - 1 | GROUP 01</p>
             </footer>
 
         </main>
-
     </div>
 
-</body>
+    <!-- Load JavaScript after the HTML -->
+    <script src="script.js"></script>
 
+</body>
 </html>
