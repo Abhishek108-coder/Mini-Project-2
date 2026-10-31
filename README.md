@@ -1,4 +1,4 @@
-# 🔗 LinkNinja -- Smart URL Shortener & Link Analytics Dashboard
+🔗 LinkNinja -- Smart URL Shortener & Link Analytics Dashboard
 
 LinkNinja is a frontend-based URL shortener dashboard designed to
 generate demo short links, manage generated links, view basic link
@@ -12,7 +12,6 @@ of a link-management platform.
 > links. A backend service and database are required for production URL
 > shortening, persistent storage, and real click analytics.
 
-------------------------------------------------------------------------
 
 ## ✨ Features
 
@@ -45,7 +44,6 @@ of a link-management platform.
     manipulation
 -   Browser Clipboard API -- Copying generated links
 
-------------------------------------------------------------------------
 
 ## 📁 Project Structure
 
@@ -62,7 +60,7 @@ LinkNinja/
 
 *Adjust the filenames above to match the files in your repository.*
 
-------------------------------------------------------------------------
+
 
 ## 🚀 Getting Started
 
@@ -88,7 +86,7 @@ run the project locally.
 No package installation or build process is required for the frontend
 demo.
 
-------------------------------------------------------------------------
+
 
 ## 📖 How to Use
 
@@ -101,15 +99,15 @@ demo.
 7.  Open **Risk Analysis**, enter a URL, and click the analysis button
     to check for basic warning signs.
 
-------------------------------------------------------------------------
+
 
 ## 📊 Analytics Information
 
 The current application provides local, demo-level statistics:
 
-  -----------------------------------------------------------------------
+  
   Metric                              Description
-  ----------------------------------- -----------------------------------
+  
   Total Links                         Number of links generated in the
                                       current browser session
 
