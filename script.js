@@ -1,8 +1,5 @@
 "use strict";
 
-// ========================================
-// LINKNINJA - FRONTEND FUNCTIONALITY
-// ========================================
 
 const urlInput = document.getElementById("urlInput");
 const analyzeButton = document.getElementById("analyzeButton");
@@ -13,12 +10,9 @@ const copyButton = document.getElementById("copyButton");
 const loginButton = document.getElementById("loginButton");
 const settingsLink = document.getElementById("settingsLink");
 
-// Store generated demo links in this browser session.
+
 let generatedLinks = [];
 
-// ========================================
-// GENERATE A RANDOM CODE
-// ========================================
 
 function generateCode() {
 const characters =
